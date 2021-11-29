@@ -1,2 +1,21 @@
+<div class="container">
+  </br>
 <h1>Stocks</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+
+<%= form_tag root_path, :method => 'POST' do %>
+  <%= text_field_tag 'ticker', nil, placeholder: "Enter Ticker Symbol", size: 30 %>&nbsp;
+  <%= submit_tag 'Lookup', class: 'btn btn-secondary'%>
+<% end %>
+</br>
+
+<% if @stock %>
+  <%= @stock.company_name %>
+<% elsif @nothing %>
+  <%= @nothing %>
+<% end %>
+
+<% if !@stock %>
+  <%= @error %>
+<% end %>
+
+</div>
