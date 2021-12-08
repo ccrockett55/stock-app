@@ -1,0 +1,31 @@
+<div class="col-2 col-md-24">
+<%= form_with(model: stock) do |form| %>
+  <% if stock.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(stock.errors.count, "error") %> prohibited this stock from being saved:</h2>
+
+      <ul>
+        <% stock.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :ticker %>
+    <%= form.text_field :ticker, class:"form-control" %>
+  </div>
+
+  <div class="field">
+
+    <%= form.number_field :user_id, class:"form-control", value: current_user.id, type: :hidden %>
+
+  </div>
+  </br>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</br>
+<% end %>
+</div>

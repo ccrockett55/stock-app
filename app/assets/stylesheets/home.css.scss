@@ -3,21 +3,39 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @import "bootstrap";
 
-.footer2 {
-position: absolute;
-right: 0;
-bottom: 0;
-left: 0;
-padding: 1rem;
-background-color: #7B7B7B;
-text-align: center;
-width: 100%;
+.footer1 {
+
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #523A28;
+  text-align: center;
+  width: 100%;
+
 }
 
+
 .txt-color {
-  color: #67B7D1;
+  color: #523A28 !important;
 }
 
 .right-align {
   text-align: right;
+}
+
+.nav-text {
+  color: #523A28 !important;
+}
+
+.blank-space {
+    height: 50px;
+    margin-top: 150px;
+    margin-bottom: 343px;
+}
+
+.blank-space2 {
+    height: 50px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }

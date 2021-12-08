@@ -6,13 +6,15 @@ class HomeController < ApplicationController
       @nothing = 'Please enter a ticker symbol'
     elsif params[:ticker]
         @stock = StockQuote::Stock.quote(params[:ticker])
-        if !@stock
+    end
+    if !@stock 
           @error = "Wrong Symbol!"
         end
 
   end
-end
+
 
   def about
+
   end
 end
