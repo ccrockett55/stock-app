@@ -12,11 +12,9 @@
 
 <% if @nothing %>
   <%= @nothing %>
-<% end %>
-<% if @stock %>
+<% elsif @stock %>
   <%= @stock.company_name %>
-<% elsif !@stock %>
-  <%= @error %>
+
 <% end %>
 <div class="blank-space"></div>
 </div>

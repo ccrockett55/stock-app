@@ -1,14 +1,28 @@
+<% @ticker = StockQuote::Stock.quote(@stock.ticker) %>
+<% @symlogo = StockQuote::Stock.logo(@stock.ticker) %>
 
+<img src="<%= @symlogo.url %>">
+</br></br>
+<p>
+<strong>Ticker:</strong>
+<%= @ticker.symbol %>
+</p>
 
-    <p>
-      <strong>Ticker:</strong>
-      <%= @stock.ticker %>
-    </p>
+<p>
+<strong>Company Name:</strong>
+<%= @ticker.company_name %>
+</p>
 
-    <p>
-      <strong>User:</strong>
-      <%= @stock.user.email %>
-    </p>
+<p>
+<strong>52 Week High:</strong>
+$<%= number_with_precision(@ticker.week52_high, :precision => 2, :delimiter => ',') %>
+</p>
+
+<p>
+<strong>52 Week Low:</strong>
+$<%= number_with_precision(@ticker.week52_low, :precision => 2, :delimiter => ',') %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_stock_path(@stock) %> |
